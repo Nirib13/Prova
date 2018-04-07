@@ -15,10 +15,10 @@ namespace Prova
             string x = InserisciNumero("Inserisci il primo numero");
             string y = InserisciNumero("Inserisci il secondo numero");
 
-            if (x=="error" || y=="error")
+            if (x.Equals("error") | y.Equals("error"))
             {
                 Console.WriteLine("Valori non inseriti correttamente");
-                AttendiChiusura();
+                
             }
             else
             {
@@ -26,6 +26,9 @@ namespace Prova
                 int b = Int32.Parse(y);
                 Calcolatrice calcolatrice = new Calcolatrice(a, b);
                 calcolatrice.Somma();
+                calcolatrice.Differenza();
+                calcolatrice.Moltiplicazione();
+                calcolatrice.Divisione();
             }
 
             
@@ -47,16 +50,18 @@ namespace Prova
         public static string InserisciNumero(String testoDaVisualizzare)
         {
             Console.WriteLine(testoDaVisualizzare);
-            Console.ReadKey();
             bool bX = int.TryParse(Console.ReadLine(), out int x);
-            
+            Console.WriteLine("bsejufajs");
+
             if (bX==true)
             {
                 return x.ToString();
             }
             else
             {
+                
                 return "error";
+                
             }
         }
     }

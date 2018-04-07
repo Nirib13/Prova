@@ -6,11 +6,35 @@ using System.Threading.Tasks;
 
 namespace Prova.Models
 {
-    interface Calcolatrice
+    class Calcolatrice: ICalcolatrice
     {
-        int Somma(int x, int y);
-        int Differenza(int x, int y);
-        int Moltiplicazione(int x, int y);
-        double Divisione(int x, int y);
+        int x;
+        int y;
+
+        public Calcolatrice(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+
+        public int Differenza(int x, int y)
+        {
+            return x - y;
+        }
+
+        public double Divisione(int x, int y)
+        {
+            return x / y;
+        }
+
+        public int Moltiplicazione(int x, int y)
+        {
+            return x * y;
+        }
+
+        public int Somma(int x, int y)
+        {
+            return x + y;
+        }
     }
 }

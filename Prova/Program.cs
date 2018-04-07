@@ -9,18 +9,26 @@ namespace Prova
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Inserisci il primo numero");
-            Console.ReadKey();
-            bool bX= int.TryParse(Console.ReadLine(),out int x);
+            string x = InserisciNumero("Inserisci il primo numero");
+            string y = InserisciNumero("Inserisci il secondo numero");
 
-            Console.WriteLine("Inserisci il secondo numero");
-            Console.ReadKey();
-            bool bY = int.TryParse(Console.ReadLine(), out int y);
+            if (x=="error" || y=="error")
+            {
+                Console.WriteLine("Valori non inseriti correttamente");
+                AttendiChiusura();
+            }
+            else
+            {
+                int a = Int32.Parse(x);
+                int b = Int32.Parse(y);
+                Calcolatrice calcolatrice = new Calcolatrice(a, b);
+                calcolatrice.Somma();
+            }
 
-
-            Calcolatrice calcolatrice = new Calcolatrice(5, 10);
+            
             
 
 
@@ -34,6 +42,22 @@ namespace Prova
         {
             Console.Write("Premi un tasto per uscire...");
             Console.ReadKey();
+        }
+
+        public static string InserisciNumero(String testoDaVisualizzare)
+        {
+            Console.WriteLine(testoDaVisualizzare);
+            Console.ReadKey();
+            bool bX = int.TryParse(Console.ReadLine(), out int x);
+            
+            if (bX==true)
+            {
+                return x.ToString();
+            }
+            else
+            {
+                return "error";
+            }
         }
     }
 }

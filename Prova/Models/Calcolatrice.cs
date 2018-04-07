@@ -17,22 +17,22 @@ namespace Prova.Models
             this.y = y;
         }
 
-        public int Differenza(int x, int y)
+        public int Differenza()
         {
             return x - y;
         }
 
-        public double Divisione(int x, int y)
+        public double Divisione()
         {
             return x / y;
         }
 
-        public int Moltiplicazione(int x, int y)
+        public int Moltiplicazione()
         {
             return x * y;
         }
 
-        public int Somma(int x, int y)
+        public int Somma()
         {
             return x + y;
         }

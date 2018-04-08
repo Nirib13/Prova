@@ -22,9 +22,19 @@ namespace Prova.Models
             return x - y;
         }
 
+        public int Differenza(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
         public double Divisione()
         {
             return x / y;
+        }
+
+        public double Divisione(int x, int y)
+        {
+            throw new NotImplementedException();
         }
 
         public int Moltiplicazione()
@@ -32,9 +42,19 @@ namespace Prova.Models
             return x * y;
         }
 
+        public int Moltiplicazione(int x, int y)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Somma()
         {
             return x + y;
+        }
+
+        public int Somma(int x, int y)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -13,7 +13,9 @@ namespace Prova
         static void Main(string[] args)
         {
             string x = InserisciNumero("Inserisci il primo numero");
+           Console.WriteLine("numero nel main"+ x);
             string y = InserisciNumero("Inserisci il secondo numero");
+            Console.WriteLine("numero nel main" + y);
 
             if (x.Equals("error") | y.Equals("error"))
             {
@@ -22,19 +24,14 @@ namespace Prova
             }
             else
             {
-                int a = Int32.Parse(x);
-                int b = Int32.Parse(y);
+            int a =Int32.Parse(x);
+                int b =Int32.Parse(y);
                 Calcolatrice calcolatrice = new Calcolatrice(a, b);
-                calcolatrice.Somma();
-                calcolatrice.Differenza();
-                calcolatrice.Moltiplicazione();
-                calcolatrice.Divisione();
+                Console.WriteLine($"La somma è: {calcolatrice.Somma()}");
+                Console.WriteLine($"La differenza è: {calcolatrice.Differenza()}");
+                Console.WriteLine($"La moltiplicazione è: {calcolatrice.Moltiplicazione()}");
+                Console.WriteLine($"La divisione è: {calcolatrice.Divisione()}");
             }
-
-            
-            
-
-
 
             AttendiChiusura();
         }
@@ -51,7 +48,6 @@ namespace Prova
         {
             Console.WriteLine(testoDaVisualizzare);
             bool bX = int.TryParse(Console.ReadLine(), out int x);
-            Console.WriteLine("bsejufajs");
 
             if (bX==true)
             {
@@ -59,9 +55,7 @@ namespace Prova
             }
             else
             {
-                
                 return "error";
-                
             }
         }
     }
